@@ -1,0 +1,38 @@
+{
+  "name": "hash-detector",
+  "version": "1.0.0",
+  "description": "Detect hashes in a string.",
+  "license": "MIT",
+  "repository": "k4m4/hash-detector",
+  "author": {
+    "name": "Nikolaos Kamarinakis",
+    "url": "nikolaskama.me",
+    "email": "nikolaskam@gmail.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "hash",
+    "detector"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "ava": "*"
+  },
+  "dependencies": {
+    "arrify": "^1.0.1",
+    "base64-regex": "^2.0.0",
+    "md5-regex": "^1.0.0",
+    "p-any": "^1.1.0",
+    "p-timeout": "^2.0.1",
+    "pify": "^3.0.0",
+    "sha1-regex": "^1.0.0"
+  }
+}
