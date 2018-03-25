@@ -18,7 +18,9 @@
   },
   "keywords": [
     "hash",
-    "detector"
+    "detector",
+    "md5",
+    "sha"
   ],
   "files": [
     "index.js"
@@ -33,6 +35,6 @@
     "p-any": "^1.1.0",
     "p-timeout": "^2.0.1",
     "pify": "^3.0.0",
-    "sha1-regex": "^1.0.0"
+    "sha-regex": "^1.0.0"
   }
 }

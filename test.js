@@ -54,3 +54,63 @@ test('sha1 with timeout', async t => {
 		t.is((await m(x, {timeout: 3000})), 'sha1');
 	}
 });
+
+const fixturesSHA224 = [
+	'b46b22bd0222bfe13a97ed5f30aa108d6ffaa75a313abb557e8c3e02',
+	'de76c3e567fca9d246f5f8d3b2e704a38c3c5e258988ab525f941db8'
+];
+test('sha224', async t => {
+	for (const x of fixturesSHA224) {
+		t.is((await m(x)), 'sha224');
+	}
+});
+test('sha224 with timeout', async t => {
+	for (const x of fixturesSHA224) {
+		t.is((await m(x, {timeout: 3000})), 'sha224');
+	}
+});
+
+const fixturesSHA256 = [
+	'4696a780a2051b5a0f422970904da794adc1b499b2f4583e778e100a0bdd79cc',
+	'c3ab8ff13720e8ad9047dd39466b3c8974e592c2fa383d4a3960714caef0c4f2'
+];
+test('sha256', async t => {
+	for (const x of fixturesSHA256) {
+		t.is((await m(x)), 'sha256');
+	}
+});
+test('sha256 with timeout', async t => {
+	for (const x of fixturesSHA256) {
+		t.is((await m(x, {timeout: 3000})), 'sha256');
+	}
+});
+
+const fixturesSHA384 = [
+	'bbcdb2b89b70a3c2479d7896da821d273387ba6dede167518b8997a25769ebb5098126142bc72a9eb0d6545afbd8db19',
+	'3c9c30d9f665e74d515c842960d4a451c83a0125fd3de7392d7b37231af10c72ea58aedfcdf89a5765bf902af93ecf06'
+];
+test('sha384', async t => {
+	for (const x of fixturesSHA384) {
+		t.is((await m(x)), 'sha384');
+	}
+});
+test('sha384 with timeout', async t => {
+	for (const x of fixturesSHA384) {
+		t.is((await m(x, {timeout: 3000})), 'sha384');
+	}
+});
+
+const fixturesSHA512 = [
+	'3d767f0e314c971584a120154d456789f0453a0cf46b4a1bf1f5a048caede89e69ed90745ce7129b3cb1286bb65397b7e69c999d0c324b262a9302dac08bc821',
+	'0a50261ebd1a390fed2bf326f2673c145582a6342d523204973d0219337f81616a8069b012587cf5635f6925f1b56c360230c19b273500ee013e030601bf2425'
+];
+test('sha512', async t => {
+	for (const x of fixturesSHA512) {
+		t.is((await m(x)), 'sha512');
+	}
+});
+test('sha512 with timeout', async t => {
+	for (const x of fixturesSHA512) {
+		t.is((await m(x, {timeout: 3000})), 'sha512');
+	}
+});
