@@ -114,3 +114,7 @@ test('sha512 with timeout', async t => {
 		t.is((await m(x, {timeout: 3000})), 'sha512');
 	}
 });
+
+test('with whitespaces', async t => {
+	t.is((await m(' \n 1abcb33beeb811dca15f0ac3e47b88d9 ')), 'md5');
+})

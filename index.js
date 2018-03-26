@@ -22,6 +22,6 @@ module.exports = (dests, opts) => {
   opts = opts || {};
   opts.timeout = typeof opts.timeout === 'number' ? opts.timeout : 5000;
 
-  const p = pAny(arrify(dests).map(detectHash));
+  const p = pAny(arrify(dests.trim()).map(detectHash));
   return pTimeout(p, opts.timeout).catch(() => 'Hash type could not be detected');
 };
