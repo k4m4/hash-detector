@@ -1,6 +1,6 @@
 # hash-detector [![Build Status](https://travis-ci.org/k4m4/hash-detector.svg?branch=master)](https://travis-ci.org/k4m4/hash-detector)
 
-> Detect hashes in a string.
+> Detect the type of hash in a string.
 
 
 ## Install
