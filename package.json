@@ -1,7 +1,7 @@
 {
   "name": "hash-detector",
   "version": "1.1.0",
-  "description": "Detect hashes in a string.",
+  "description": "Detect the type of hash in a string.",
   "license": "MIT",
   "repository": "k4m4/hash-detector",
   "author": {
