@@ -65,6 +65,11 @@ Timeout in milliseconds after which a request is considered failed. Default: `50
 - [`SHA1`, `SHA224`, `SHA256`, `SHA384`, `SHA512`](https://github.com/k4m4/sha-regex)
 
 
+## Related
+
+- [hash-detector-cli](https://github.com/k4m4/hash-detector-cli) - CLI for this module
+
+
 ## License
 
 MIT © [Nikolaos Kamarinakis](https://nikolaskama.me)
