@@ -9,7 +9,7 @@ const shaRegex         = require('sha-regex')
 const ripemdRegex      = require('ripemd-regex');
 
 function detectHash(address) {
-	if (base64Regex({exact: true}).test(address)) return 'base64';
+  if (base64Regex({exact: true}).test(address)) return 'base64';
     else if (md5Regex({exact: true}).test(address)) return 'md5';
     else if (shaRegex.version(1).test(address)) return 'sha1';
     else if (shaRegex.version(224).test(address)) return 'sha224';
@@ -17,7 +17,7 @@ function detectHash(address) {
     else if (shaRegex.version(384).test(address)) return 'sha384';
     else if (shaRegex.version(512).test(address)) return 'sha512';
     else if (ripemdRegex.version(320).test(address)) return 'ripemd320'
-	else return 'Hash type could not be detected'
+  else return 'Hash type could not be detected'
 }
 
 module.exports = (dests, opts) => {
