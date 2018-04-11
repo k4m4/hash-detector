@@ -6,6 +6,7 @@ const pTimeout         = require('p-timeout');
 const base64Regex      = require('base64-regex');
 const md5Regex         = require('md5-regex');
 const shaRegex         = require('sha-regex')
+const ripemdRegex      = require('ripemd-regex');
 
 function detectHash(address) {
 	if (base64Regex({exact: true}).test(address)) return 'base64';
@@ -15,6 +16,7 @@ function detectHash(address) {
     else if (shaRegex.version(256).test(address)) return 'sha256';
     else if (shaRegex.version(384).test(address)) return 'sha384';
     else if (shaRegex.version(512).test(address)) return 'sha512';
+    else if (ripemdRegex.version(320).test(address)) return 'ripemd320'
 	else return 'Hash type could not be detected'
 }
 

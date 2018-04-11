@@ -115,6 +115,21 @@ test('sha512 with timeout', async t => {
 	}
 });
 
+const fixturesRIPEMD320 = [
+	'f4971074a8da200c122c04bc4e0fa96066913d6f38d3397eb61a7341078cd4841386e159993826af',
+	'd0335d3ebd1161430fa1f789c6c4edb85ab4ceb2118ed032ee9625318de13fc45c876aef5c29bfff'
+]
+test('ripemd320', async t => {
+	for (const x of fixturesRIPEMD320) {
+		t.is((await m(x)), 'ripemd320');
+	}
+});
+test('ripemd320 with timeout', async t => {
+	for (const x of fixturesRIPEMD320) {
+		t.is((await m(x, {timeout: 3000})), 'ripemd320');
+	}
+});
+
 test('with whitespaces', async t => {
 	t.is((await m(' \n 1abcb33beeb811dca15f0ac3e47b88d9 ')), 'md5');
-})
+});
