@@ -24,7 +24,7 @@ function detectHash (hash) {
   if (bits in hashPerBits) {
     return hashPerBits[bits];
   } else {
-    'Hash type could not be detected'
+    return 'Hash type could not be detected'
   }
 }
 
