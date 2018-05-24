@@ -1,7 +1,7 @@
 {
   "name": "hash-detector",
   "version": "1.3.0",
-  "description": "Detect the type of hash in a string.",
+  "description": "Retrieve an array of possible hash types corresponding to a given string.",
   "license": "MIT",
   "repository": "k4m4/hash-detector",
   "author": {
@@ -19,9 +19,8 @@
   "keywords": [
     "hash",
     "detector",
-    "md5",
-    "sha",
-    "ripemd"
+    "detection",
+    "hash-type"
   ],
   "files": [
     "index.js"
@@ -31,12 +30,8 @@
   },
   "dependencies": {
     "arrify": "^1.0.1",
-    "base64-regex": "^2.0.0",
-    "md5-regex": "^1.0.1",
     "p-any": "^1.1.0",
     "p-timeout": "^2.0.1",
-    "pify": "^3.0.0",
-    "ripemd-regex": "^1.0.0",
-    "sha-regex": "^1.0.2"
+    "pify": "^3.0.0"
   }
 }

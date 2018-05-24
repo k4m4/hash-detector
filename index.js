@@ -1,23 +1,31 @@
 'use strict'
-const arrify           = require('arrify');
-const pAny             = require('p-any');
-const pify             = require('pify');
-const pTimeout         = require('p-timeout');
-const base64Regex      = require('base64-regex');
-const md5Regex         = require('md5-regex');
-const shaRegex         = require('sha-regex')
-const ripemdRegex      = require('ripemd-regex');
+const arrify   = require('arrify');
+const pAny     = require('p-any');
+const pify     = require('pify');
+const pTimeout = require('p-timeout');
 
-function detectHash(address) {
-  if (base64Regex({exact: true}).test(address)) return 'base64';
-    else if (md5Regex({exact: true}).test(address)) return 'md5';
-    else if (shaRegex.version(1).test(address)) return 'sha1';
-    else if (shaRegex.version(224).test(address)) return 'sha224';
-    else if (shaRegex.version(256).test(address)) return 'sha256';
-    else if (shaRegex.version(384).test(address)) return 'sha384';
-    else if (shaRegex.version(512).test(address)) return 'sha512';
-    else if (ripemdRegex.version(320).test(address)) return 'ripemd320'
-  else return 'Hash type could not be detected'
+const hashPerBits = {
+  32: ['FNV-1-32', 'FNV-1a-32'],
+  52: ['FNV-1a-52'],
+  64: ['FNV-1-64', 'FNV-1a-64'],
+  128: ['MD2', 'MD4', 'MD5', 'MD6', 'RIPEMD-180', 'Tiger-128', 'Snerfu-128', 'FNV-1a-128', 'MDC-2', 'HAVAL-128'],
+  160: ['SHA-1', 'RIPEMD', 'Tiger', 'HAVAL-160', 'HAS-160'],
+  192: ['Tiger-192', 'HAVAL-192'],
+  224: ['SHA-224', 'HAVAL-224'],
+  256: ['SHA-256', 'RIPEMD-256', 'GOST', 'Snerfu-256', 'Streebog-256', 'HAVAL-256'],
+  320: ['RIPEMD-320'],
+  384: ['SHA-384'],
+  512: ['SHA-512', 'FNV-1a-512', 'BLAKE-512', 'Whirpool', 'Spectral Hash', 'Streebog-512'],
+  1024: ['FNV-1a-1024']
+}
+
+function detectHash (hash) {
+  var bits = hash.length * 4;
+  if (bits in hashPerBits) {
+    return hashPerBits[bits];
+  } else {
+    'Hash type could not be detected'
+  }
 }
 
 module.exports = (dests, opts) => {
