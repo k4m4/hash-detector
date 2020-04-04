@@ -1,6 +1,6 @@
 {
   "name": "hash-detector",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Retrieve an array of possible hash types corresponding to a given string.",
   "license": "MIT",
   "repository": "k4m4/hash-detector",
