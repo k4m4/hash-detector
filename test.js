@@ -14,7 +14,7 @@ const hashPerBits = {
 	384: ['SHA-384', 'SHA3-384'],
 	512: ['SHA-512', 'SHA3-512', 'FNV-1a-512', 'BLAKE-512', 'Whirpool', 'Spectral Hash', 'Streebog-512'],
 	1024: ['FNV-1a-1024']
-}
+};
 
 const hashes = [
 	'1abcb33beeb811dca15f0ac3e47b88d9',
